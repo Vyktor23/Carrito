@@ -1,4 +1,4 @@
-/* Reset de estilos */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +10,7 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Encabezado */
+
 header {
   background-color: #e44d26;
   color: #fff;
@@ -44,7 +44,7 @@ nav ul i:hover{
   color: #4CAF50;
 }
 
-/* Contenedor principal */
+
 #container {
   max-width: 1200px;
   margin: 0 auto;
@@ -54,7 +54,7 @@ nav ul i:hover{
   padding: 20px;
 }
 
-/* Estilos de cada producto */
+
 div {
   background-color: #fff;
   padding: 30px;
@@ -107,7 +107,7 @@ button:hover {
   background-color: #4CAF50;
 }
 
-/* Pie de página */
+
 footer {
   background-color: #333;
   color: #fff;
@@ -117,7 +117,7 @@ footer {
   margin-top: 40px;
 }
 
-/* Redes sociales y medios de pago */
+
 .redes,
 .pagos {
   display: flex;
@@ -138,7 +138,7 @@ footer {
   color: #4CAF50;
 }
 
-/* Carrito de compras */
+
 #carritoEdit {
   position: fixed;
   top: 80%;
@@ -152,7 +152,7 @@ footer {
   cursor: pointer;
 }
 
-/* Carro (lista de compras) */
+
 .carro {
   position: fixed;
   top: 30%;
@@ -172,7 +172,7 @@ footer {
   opacity: 1;
 }
 
-/* Encabezado del carro */
+
 .carro .encabezado-carro {
   text-align: center;
   margin-bottom: 5%;
@@ -184,7 +184,7 @@ footer {
   color: #fff;
 }
 
-/* Lista de productos en el carro */
+
 #lista-carrito {
   width: 100%;
   border-collapse: collapse;
@@ -206,7 +206,7 @@ footer {
   margin-top: 0;
 }
 
-/* Botones en el carro */
+
 .carro button {
   background-color: #e44d26;
   color: #fff;
@@ -224,12 +224,12 @@ footer {
   background-color: #4CAF50;
 }
 
-/* Íconos en el carro */
+
 .carro i {
   margin-left: 5%;
 }
 
-/* Iconos de agregar y eliminar */
+
 #agregar,
 #eliminar {
   font-size: 20px;
@@ -238,18 +238,18 @@ footer {
   color: #000000;
 }
 
-/* Descripción */
+
 .dess {
   height: 60px;
 }
 
-/* Efecto hover para productos */
+
 .producto:hover {
   transform: scale(1.1);
   transition: transform 0.3s;
 }
 
-/* Efecto hover para el carrito */
+
 #carritoEdit:hover {
   color: #4CAF50;
 }
