@@ -1,0 +1,267 @@
+/* Reset de estilos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Encabezado */
+header {
+  background-color: #e44d26;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul i {
+  font-size: 20px;
+  margin: 0 10px;
+  font-size: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: #000000;
+}
+
+nav ul i:hover{
+  color: #4CAF50;
+}
+
+/* Contenedor principal */
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilos de cada producto */
+div {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#carrito{
+  background-color: #ffffff00;
+  padding: none;
+  border-radius: none;
+  box-shadow: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #e44d26;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #e44d26;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4CAF50;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* Redes sociales y medios de pago */
+.redes,
+.pagos {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.redes i,
+.pagos i {
+  font-size: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.redes i:hover,
+.pagos i:hover {
+  color: #4CAF50;
+}
+
+/* Carrito de compras */
+#carritoEdit {
+  position: fixed;
+  top: 80%;
+  right: 14%;
+  font-size: 30px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Carro (lista de compras) */
+.carro {
+  position: fixed;
+  top: 30%;
+  right: 2%;
+  font-size: 16px;
+  width: 18%;
+  height: auto;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+
+.carro.show {
+  opacity: 1;
+}
+
+/* Encabezado del carro */
+.carro .encabezado-carro {
+  text-align: center;
+  margin-bottom: 5%;
+  width: 100%;
+  height: 20%;
+  border-radius: 8px;
+  box-shadow: none;
+  background-color: #e44d26;
+  color: #fff;
+}
+
+/* Lista de productos en el carro */
+#lista-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 5%;
+}
+
+#lista-carrito th,
+#lista-carrito td {
+  padding: 10px;
+  text-align: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+#lista-carrito th {
+  background-color: #fff;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+}
+
+/* Botones en el carro */
+.carro button {
+  background-color: #e44d26;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 40%;
+  height: 20%;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 5% auto;
+}
+
+.carro button:hover {
+  background-color: #4CAF50;
+}
+
+/* Íconos en el carro */
+.carro i {
+  margin-left: 5%;
+}
+
+/* Iconos de agregar y eliminar */
+#agregar,
+#eliminar {
+  font-size: 20px;
+  margin: 0;
+  cursor: pointer;
+  color: #000000;
+}
+
+/* Descripción */
+.dess {
+  height: 60px;
+}
+
+/* Efecto hover para productos */
+.producto:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+/* Efecto hover para el carrito */
+#carritoEdit:hover {
+  color: #4CAF50;
+}
+
+
+.carro {
+  overflow-y: auto;
+  max-height: 45%;
+}
+
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

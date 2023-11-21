@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Moda</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/586/8681193586_7a4d81a0-c86f-4041-a168-4ea1e9c1bcb5.png?cb=1699134583"
+            class="logo">
+        <nav>
+            <ul class="iconos">
+                <li><i class="fas fa-house"></i></li>
+                <a href="https://diegopalomares.es/wp-content/uploads/2016/04/proximamente.png">
+                    <li><i class="fab fa-whatsapp-square"></i></li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="container"></div>
+
+    <div id="carrito">
+        <div id="carritoEdit">
+            <i class="fas fa-shopping-cart" id="carro"></i>
+        </div>
+        <div class="carro">
+            <div class="encabezado-carro">
+                <h2>Tu carrito</h2>
+            </div>
+            <ul id="lista-carrito" class="u-full-width">
+            </ul>
+            <p id="total-pagar">Total a pagar: $0</p>
+            <button class="comprar">Comprar<i class="fa-solid fa-bag-shopping"></i></button>
+            <button class="vaciarcarro">Vaciar carrito<i class="fa-solid fa-trash"></i></button>
+        </div>
+
+
+
+        <footer>
+            <div class="parte1">
+                <p>Síguenos en</p>
+                <div class="redes">
+                    <a href="https://diegopalomares.es/wp-content/uploads/2016/04/proximamente.png"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://diegopalomares.es/wp-content/uploads/2016/04/proximamente.png"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://diegopalomares.es/wp-content/uploads/2016/04/proximamente.png"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+                <br>
+                <div class="pagos">
+                    <p>Medios de Pago</p>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-apple-pay"></i>
+                    <i class="fab fa-paypal"></i>
+                    <i class="fab fa-apple-pay"></i>
+                </div>
+                <br>
+            </div>
+            <p>&copy; 2023 Boutique Moda. Todos los derechos reservados.</p>
+        </footer>
+
+        <script>
+
+            let carrito = [];
+
+
+            let productos = [
+                { id: 1, nombre: 'Urben Mood', descripcion: 'Chaqueta Casual Hombre Mountainskin EDA104 Negro', precio: 129900, img: 'https://static.dafiti.com.co/p/urbenmood-6611-740739-1-catalog-new.jpg' },
+                { id: 2, nombre: 'MP', descripcion: 'Camiseta Polo Adulto Masculino Marfil Marketing Personal', precio: 33900, img: 'https://static.dafiti.com.co/p/mp-5935-3917811-1-product.jpg' },
+                { id: 3, nombre: 'Polo Ralph Lauren', descripcion: 'Camisa Azul Polo Ralph Lauren Bsr Blue', precio: 320000, img: 'https://static.dafiti.com.co/p/polo-ralph-lauren-7741-2907121-1-product.jpg' },
+                { id: 4, nombre: 'Adidas Performance', descripcion: 'Camiseta Rojo-Blanco adidas Performance Local FC Bayern', precio: 194900, img: 'https://static.dafiti.com.co/p/adidas-performance-9434-3217412-1-product.jpg' },
+                { id: 5, nombre: 'GAP', descripcion: 'Buzo Blanco-Rojo GAP', precio: 114000, img: 'https://static.dafiti.com.co/p/gap-4988-1448702-1-product.jpg' },
+                { id: 6, nombre: 'Levis', descripcion: 'Chaqueta Denim Azul-Blanco Levis Sherpa Trucker', precio: 314900, img: 'https://static.dafiti.com.co/p/levis-1941-2163801-1-product.jpg' },
+                { id: 7, nombre: 'MP', descripcion: 'Vestido Para Mujer Azul Navy MP', precio: 40000, img: 'https://static.dafiti.com.co/p/mp-6616-3512931-1-product.jpg' },
+                { id: 8, nombre: 'Atypical', descripcion: 'Vestido Largo Mujer Beige Atypical 91987', precio: 68900, img: 'https://static.dafiti.com.co/p/atypical-9078-5826032-1-product.jpg' },
+                { id: 9, nombre: 'Nike', descripcion: 'Tenis Basketball Negro-Rojo-Blanco-Violeta Nike Air Jordan Jumpman MVP Raptors', precio: 899900, img: 'https://static.dafiti.com.co/p/nike-1428-2970132-1-product.jpg' },
+                { id: 10, nombre: 'Adidas Originals', descripcion: 'Tenis Lifestyle Blanco-Azul-Dorado adidas Originals Forum Bonega', precio: 479900, img: 'https://static.dafiti.com.co/p/adidas-originals-6147-1665132-1-catalog-new.jpg' },
+                { id: 11, nombre: 'Totto', descripcion: 'Morral Compliment Con Porta Pc De 13"', precio: 140000, img: 'https://static.dafiti.com.co/p/totto-5341-3743891-1-product.jpg' },
+                { id: 12, nombre: 'Invicta', descripcion: 'Reloj Para Hombre Invicta Pro Diver 23424 Dorado', precio: 529900, img: 'https://static.dafiti.com.co/p/invicta-4804-5474881-1-product.jpg' },
+                { id: 13, nombre: 'Tommy Hilfiger', descripcion: 'GAFAS TOMMY HILFIGER OUTLOOK X67208', precio: 130000, img: 'https://static.dafiti.com.co/p/tommy-hilfiger-1424-8173722-1-product.jpg' },
+                { id: 14, nombre: 'Frenezi', descripcion: 'Gorra Beisbol Diseño MRT Ref. D', precio: 45900, img: 'https://static.dafiti.com.co/p/frenezi-0989-662749-1-product.jpg' },
+                { id: 15, nombre: 'Levis', descripcion: 'Jean Azul Oscuro Levis 511 Slim Fit', precio: 200900, img: 'https://static.dafiti.com.co/p/levis-6437-9424321-1-product.jpg' },
+                { id: 16, nombre: 'MP', descripcion: 'Bermuda Para Hombre Negro Mp', precio: 36900, img: 'https://static.dafiti.com.co/p/mp-0787-6802381-1-product.jpg' },
+                { id: 17, nombre: 'Jack & Jones', descripcion: 'Chaqueta Negro Jack & Jones', precio: 134900, img: 'https://static.dafiti.com.co/p/jack-jones-6475-0569491-1-product.jpg' },
+                { id: 18, nombre: 'Atypical', descripcion: 'Pantalón Mujer Naranja Atypical 89574', precio: 48800, img: 'https://static.dafiti.com.co/p/atypical-1689-7675922-1-product.jpg' },
+                { id: 19, nombre: 'MP', descripcion: 'Vestido Mujer Azul Mp 69903', precio: 46000, img: 'https://static.dafiti.com.co/p/mp-2362-8783722-1-product.jpg' },
+                { id: 20, nombre: 'Ragged', descripcion: 'Vestido Manantial Blanco Ragged Pf11511074', precio: 149900, img: 'https://static.dafiti.com.co/p/ragged-1948-4917632-1-product.jpg' },
+            ]
+
+            document.addEventListener("DOMContentLoaded", () => {
+                pintar();
+                setupEventListeners();
+            });
+
+            function formatoNumerico(numero) {
+                if (typeof numero === 'number') {
+                    numero = numero.toString();
+                }
+                if (numero.length >= 4 && numero.length <= 9) {
+                    let formatoActualizado = numero.split("");
+                    formatoActualizado.splice(-3, 0, ".");
+                    if (numero.length == 7 || numero.length == 8 || numero.length == 9) {
+                        formatoActualizado.splice(-7, 0, ".");
+                    }
+                    return formatoActualizado.join("");
+                }
+            }
+
+            function pintar() {
+
+                let fragment = document.createDocumentFragment();
+                productos.forEach((item, index) => {
+                    let div = document.createElement("div");
+                    let img = document.createElement("img");
+                    img.src = item.img
+                    let h2 = document.createElement("h2");
+                    h2.textContent = item.nombre
+                    let des = document.createElement("h3");
+                    des.textContent = item.descripcion
+                    des.classList.add('dess')
+                    let p = document.createElement("p")
+                    let button = document.createElement("button")
+                    button.textContent = "agregar al carrito"
+                    button.addEventListener("click", () => {
+                        console.log(item.id);
+                    })
+                    p.textContent = '$' + ' ' + formatoNumerico(item.precio)
+                    div.appendChild(img)
+                    div.appendChild(h2)
+                    div.appendChild(des)
+                    div.appendChild(p)
+                    div.appendChild(button)
+                    fragment.appendChild(div)
+
+                })
+
+                document.getElementById("container").appendChild(fragment)
+            }
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const carritoIcono = document.getElementById("carritoEdit");
+                const carritoSeccion = document.querySelector(".carro");
+                let carritoVisible = false;
+
+                carritoIcono.addEventListener("click", function () {
+                    if (carritoVisible) {
+                        carritoSeccion.style.opacity = "0";
+                    } else {
+                        carritoSeccion.style.opacity = "1";
+                    }
+                    carritoVisible = !carritoVisible;
+                });
+            });
+
+
+
+
+            document.addEventListener("DOMContentLoaded", () => {
+
+                const carritoIcono = document.getElementById("carritoEdit");
+                const carritoSeccion = document.querySelector(".carro");
+                let carritoVisible = false;
+
+                carritoIcono.addEventListener("click", function () {
+                    if (carritoVisible) {
+                        carritoSeccion.style.opacity = "0";
+                    } else {
+                        carritoSeccion.style.opacity = "1";
+                    }
+                    carritoVisible = !carritoVisible;
+                });
+
+
+                const listaCarrito = document.getElementById("lista-carrito");
+
+
+                const agregarAlCarritoBotones = document.querySelectorAll("button");
+
+                agregarAlCarritoBotones.forEach((boton, index) => {
+                    boton.addEventListener("click", () => {
+                        agregarAlCarrito(index);
+                        mostrarCarrito();
+                    });
+                });
+
+                function agregarAlCarrito(index) {
+                    const productoExistente = carrito.find(item => item.id === productos[index].id);
+
+                    if (productoExistente) {
+                        productoExistente.cantidad++;
+                        productoExistente.precioTotal = productoExistente.cantidad * productoExistente.precio;
+                    } else {
+                        carrito.push({ ...productos[index], cantidad: 1, precioTotal: productos[index].precio });
+                    }
+
+                    mostrarCarrito();
+                }
+
+                function mostrarCarrito() {
+                    listaCarrito.innerHTML = "";
+
+                    carrito.forEach((producto) => {
+                        const fila = document.createElement("tr");
+                        fila.innerHTML = `
+                        <td><img src="${producto.img}" alt="${producto.nombre}" class="carrito-imagen"></td>
+                        <td>${producto.nombre}</td>
+                        <td>Cantidad: ${producto.cantidad}</td>
+                        <td>Precio total: $${formatoNumerico(producto.precioTotal)}</td>
+                        <td><button class="reducir-cantidad" data-id="${producto.id}">-</button></td>
+                    `;
+                        listaCarrito.appendChild(fila);
+                    });
+
+                    const totalPagarElemento = document.getElementById("total-pagar");
+                    const totalPagar = carrito.reduce((total, producto) => total + producto.precioTotal, 0);
+                    totalPagarElemento.textContent = `Total a pagar: $${formatoNumerico(totalPagar)}`;
+
+                    carritoSeccion.classList.add("show");
+
+
+                }
+            });
+
+
+
+            const listaCarrito = document.getElementById("lista-carrito");
+
+            function actualizarCarrito(producto) {
+                const elementoExistente = carrito.find(item => item.id === producto.id);
+
+                if (elementoExistente) {
+                    elementoExistente.cantidad++;
+                } else {
+                    carrito.push({ ...producto, cantidad: 1 });
+                }
+
+                mostrarCarrito();
+
+            }
+
+
+            function reducirCantidad(productId) {
+                const productoExistente = carrito.find(item => item.id === productId);
+                if (productoExistente) {
+                    if (productoExistente.cantidad > 1) {
+                        productoExistente.cantidad--;
+                        productoExistente.precioTotal = productoExistente.cantidad * productoExistente.precio;
+                    } else {
+                        carrito = carrito.filter(item => item.id !== productId);
+                    }
+                }
+            }
+
+            function vaciarCarrito() {
+                carrito = [];
+
+                mostrarCarrito();
+
+
+                const totalPagarElemento = document.getElementById("total-pagar");
+                totalPagarElemento.textContent = `Total a pagar: $0`;
+            }
+
+            function mostrarCarrito() {
+                listaCarrito.innerHTML = "";
+
+                carrito.forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+                    <span>${item.nombre}</span>
+                    <span>Precio: $${formatoNumerico(item.precio)}</span>
+                    <span>Cantidad: ${item.cantidad}</span>
+                    <button class="eliminar-item" data-id="${item.id}">-</button>
+                `;
+                    listaCarrito.appendChild(li);
+                });
+
+            }
+
+
+
+            function manejarAgregarAlCarrito(producto) {
+                return function () {
+                    actualizarCarrito(producto);
+                };
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+
+                const botonesAgregar = document.querySelectorAll(".agregar-al-carrito");
+                botonesAgregar.forEach((boton, index) => {
+                    boton.addEventListener("click", manejarAgregarAlCarrito(productos[index]));
+                });
+
+                const botonVaciarCarrito = document.querySelector(".vaciarcarro");
+                botonVaciarCarrito.addEventListener("click", vaciarCarrito);
+
+
+            });
+
+
+        </script>
+</body>
+<style>
+</style>
+
+</html>
